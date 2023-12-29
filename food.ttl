@@ -1,0 +1,677 @@
+@prefix : <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#> .
+
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16-25> rdf:type owl:Ontology .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#caution_of
+:caution_of rdf:type owl:AnnotationProperty ;
+            rdfs:range xsd:string .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#contain_of
+:contain_of rdf:type owl:AnnotationProperty ;
+            rdfs:range <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient> ,
+                       xsd:string .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_description
+:has_description rdf:type owl:AnnotationProperty ;
+                 rdfs:range xsd:string ;
+                 rdfs:domain owl:Thing .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_indonesian_term
+:has_indonesian_term rdf:type owl:AnnotationProperty ;
+                     rdfs:range xsd:string ;
+                     rdfs:domain owl:Thing .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_label
+:has_label rdf:type owl:AnnotationProperty ;
+           rdfs:range xsd:string ;
+           rdfs:domain owl:Thing .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_symptom
+:has_symptom rdf:type owl:AnnotationProperty ;
+             rdfs:range xsd:string ;
+             rdfs:domain :mulnutrition .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_synonim
+:has_synonim rdf:type owl:AnnotationProperty ;
+             rdfs:range xsd:string ;
+             rdfs:domain owl:Thing .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#needed_by
+:needed_by rdf:type owl:AnnotationProperty ;
+           rdfs:range xsd:string ;
+           rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#recipe
+:recipe rdf:type owl:AnnotationProperty ;
+        rdfs:range xsd:string ;
+        rdfs:domain owl:Thing .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#belong_of
+:belong_of rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf owl:topObjectProperty ;
+           rdfs:range :city ;
+           owl:propertyDisjointWith :contain_of .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#contain_of
+:contain_of rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food_source> ;
+            owl:propertyDisjointWith :has_caution ,
+                                     :has_function ,
+                                     :is_function_of ,
+                                     :is_source_of .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_caution
+:has_caution rdf:type owl:ObjectProperty ;
+             rdfs:subPropertyOf owl:topObjectProperty ;
+             rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#malnutrition> ;
+             rdfs:range :malnutrition_caution .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_function
+:has_function rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient> ;
+              rdfs:range <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient_function> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_source
+:has_source rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf owl:topObjectProperty ;
+            rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> ;
+            rdfs:range <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food_source> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#is_caution_of
+:is_caution_of rdf:type owl:ObjectProperty ;
+               rdfs:subPropertyOf owl:topObjectProperty ;
+               rdfs:domain :malnutrition_caution ;
+               rdfs:range <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#malnutrition> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#is_function_of
+:is_function_of rdf:type owl:ObjectProperty ;
+                rdfs:subPropertyOf owl:topObjectProperty ;
+                rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient_function> ;
+                rdfs:range <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#is_source_of
+:is_source_of rdf:type owl:ObjectProperty ;
+              rdfs:subPropertyOf owl:topObjectProperty ;
+              rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food_source> ;
+              rdfs:range <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_energy
+:has_energy rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> ;
+            rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_normal_length
+:has_normal_length rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> ;
+                   rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_normal_weight
+:has_normal_weight rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf owl:topDataProperty ;
+                   rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> ;
+                   rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_nutrient
+:has_nutrient rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf :has_old ;
+              rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> ;
+              rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#has_old
+:has_old rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> ;
+         rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#needs_energy
+:needs_energy rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
+              rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> ;
+              rdfs:range xsd:float .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#needs_nutrient
+:needs_nutrient rdf:type owl:DatatypeProperty ;
+                rdfs:subPropertyOf owl:topDataProperty ;
+                rdfs:domain <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> ;
+                rdfs:range xsd:float .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#adolescents
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#adolescents> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#animal_based
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#animal_based> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food_source> ;
+                                                                                        owl:disjointWith <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#carbohydrate
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#carbohydrate> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#macronutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#dairy_product
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#dairy_product> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#animal_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#egg
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#egg> rdf:type owl:Class ;
+                                                                               rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#animal_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#energy_sources
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#energy_sources> rdf:type owl:Class ;
+                                                                                          rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient_function> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#fish
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#fish> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#animal_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food_source
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food_source> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#fruits
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#fruits> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#grains
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#grains> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#infants
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#infants> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#legumes
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#legumes> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#lipid
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#lipid> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#macronutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#macronutrient
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#macronutrient> rdf:type owl:Class ;
+                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                               owl:unionOf ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#carbohydrate>
+                                                                                                                             <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#lipid>
+                                                                                                                             <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#protein>
+                                                                                                                             <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#water>
+                                                                                                                           )
+                                                                                                             ] ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient> ;
+                                                                                         owl:disjointWith <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#micronutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#malnutrition
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#malnutrition> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf :irani_food .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#meat
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#meat> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#animal_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#micronutrient
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#micronutrient> rdf:type owl:Class ;
+                                                                                         owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                               owl:unionOf ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#mineral>
+                                                                                                                             <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin>
+                                                                                                                           )
+                                                                                                             ] ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#mineral
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#mineral> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#micronutrient> ;
+                                                                                   owl:disjointWith <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#mushrooms
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#mushrooms> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient_function
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient_function> rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrition_deficiency
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrition_deficiency> rdf:type owl:Class ;
+                                                                                                rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#malnutrition> ;
+                                                                                                owl:disjointWith <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#overnutrition> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nuts
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nuts> rdf:type owl:Class ;
+                                                                                rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#overnutrition
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#overnutrition> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#malnutrition> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> rdf:type owl:Class ;
+                                                                                  owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                        owl:unionOf ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#adolescents>
+                                                                                                                      <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#infants>
+                                                                                                                      <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#preschoolers>
+                                                                                                                      <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#school_age_children>
+                                                                                                                    )
+                                                                                                      ] .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> rdf:type owl:Class ;
+                                                                                       rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food_source> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#preschoolers
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#preschoolers> rdf:type owl:Class ;
+                                                                                        rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#promote_growth_and_developement
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#promote_growth_and_developement> rdf:type owl:Class ;
+                                                                                                           rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient_function> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#protein
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#protein> rdf:type owl:Class ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#macronutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#regulate_body_function
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#regulate_body_function> rdf:type owl:Class ;
+                                                                                                  rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nutrient_function> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#school_age_children
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#school_age_children> rdf:type owl:Class ;
+                                                                                               rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#person> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#tubers
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#tubers> rdf:type owl:Class ;
+                                                                                  rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vegetables
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vegetables> rdf:type owl:Class ;
+                                                                                      rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#plant_based> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin> rdf:type owl:Class ;
+                                                                                   owl:equivalentClass [ rdf:type owl:Class ;
+                                                                                                         owl:unionOf ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_A>
+                                                                                                                       <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_B>
+                                                                                                                       <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_C>
+                                                                                                                       <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_D>
+                                                                                                                       <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_E>
+                                                                                                                       <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_k>
+                                                                                                                     )
+                                                                                                       ] ;
+                                                                                   rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#micronutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_A
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_A> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_B
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_B> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_C
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_C> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_D
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_D> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_E
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_E> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_k
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_k> rdf:type owl:Class ;
+                                                                                     rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#water
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#water> rdf:type owl:Class ;
+                                                                                 rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#macronutrient> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#abgosht
+:abgosht rdf:type owl:Class ;
+         rdfs:subClassOf :irani_food ;
+         :recipe "" .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#adasi
+:adasi rdf:type owl:Class ;
+       rdfs:subClassOf :ash ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :contain_of ;
+                         owl:someValuesFrom <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#grains>
+                       ] ,
+                       [ rdf:type owl:Restriction ;
+                         owl:onProperty :contain_of ;
+                         owl:someValuesFrom <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#mushrooms>
+                       ] .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#ash
+:ash rdf:type owl:Class ;
+     rdfs:subClassOf :irani_food .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#city
+:city rdf:type owl:Class ;
+      owl:equivalentClass [ owl:intersectionOf ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food>
+                                                 [ rdf:type owl:Class ;
+                                                   owl:oneOf ( :ahvaz
+                                                               :azarbayjan
+                                                               :qom
+                                                               :shiraz
+                                                               :tabriz
+                                                               :tehran
+                                                             )
+                                                 ]
+                                               ) ;
+                            rdf:type owl:Class
+                          ] ;
+      rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#irani_food
+:irani_food rdf:type owl:Class ;
+            rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#kabab
+:kabab rdf:type owl:Class ;
+       rdfs:subClassOf :irani_food .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#kalam_barg
+:kalam_barg rdf:type owl:Class ;
+            rdfs:subClassOf :ash ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :belong_of ;
+                              owl:hasValue :azarbayjan
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty :belong_of ;
+                              owl:hasValue :tabriz
+                            ] .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#khorosh
+:khorosh rdf:type owl:Class ;
+         rdfs:subClassOf :irani_food .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#malnutrition_caution
+:malnutrition_caution rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#meat
+:meat rdf:type owl:Class ;
+      owl:equivalentClass [ rdf:type owl:Class ;
+                            owl:oneOf ( :minced_meat
+                                        :pieces_meat
+                                      )
+                          ] ;
+      rdfs:subClassOf <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#food> .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#mulnutrition
+:mulnutrition rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#nutrition_deficiency
+:nutrition_deficiency rdf:type owl:Class ;
+                      rdfs:subClassOf :mulnutrition .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#overnutrition
+:overnutrition rdf:type owl:Class ;
+               rdfs:subClassOf :mulnutrition .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#qorme_sabzi
+:qorme_sabzi rdf:type owl:Class ;
+             rdfs:subClassOf :khorosh ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :contain_of ;
+                               owl:someValuesFrom <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#grains>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :contain_of ;
+                               owl:someValuesFrom <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nuts>
+                             ] ,
+                             [ rdf:type owl:Restriction ;
+                               owl:onProperty :contain_of ;
+                               owl:someValuesFrom <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vegetables>
+                             ] ;
+             :recipe """گوشت را پس از تمیز کردن خرد کرده همراه با پیاز داغ تفت می دهیم . زرد چوبه اضافه کرده همراه با آب و لوبیا
+قرمزمی پزیم.پس از اینکه گوشت نیم پز شد سبزی (تره,جعفری,گشنیز,کمی شنبلیله ,چند پر نعناع)را که تمیز کرده , شسته و خرد کرده ایم با مقداری روغن سرخ می کنیم و داخل گوشت می ریزیم .
+نمک و فلفل را اضافه کرده پس از چند جوش لیمو عمانی را چند سوراخ کرده داخل آن می ریزیم و می گذاریم خورش پخته و جا بیفتد . میتوانیم مقدار 3/1 پیمانه آبغوره به خورش اضافه کنیم . خورش پس از پختن باید کاملاً جا بیفتد و روغن بر سطح آن قرار گیرد""" .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#saj_kabab
+:saj_kabab rdf:type owl:Class ;
+           rdfs:subClassOf :kabab ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty :belong_of ;
+                             owl:hasValue :azarbayjan
+                           ] .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#soup
+:soup rdf:type owl:Class ;
+      rdfs:subClassOf :irani_food .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#qarch_&_zorat
+<http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#qarch_&_zorat> rdf:type owl:Class ;
+                                                                                         rdfs:subClassOf :soup ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :contain_of ;
+                                                                                                           owl:someValuesFrom <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#mushrooms>
+                                                                                                         ] ,
+                                                                                                         [ rdf:type owl:Restriction ;
+                                                                                                           owl:onProperty :contain_of ;
+                                                                                                           owl:someValuesFrom <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vegetables>
+                                                                                                         ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#ahvaz
+:ahvaz rdf:type owl:NamedIndividual ,
+                :city .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#azarbayjan
+:azarbayjan rdf:type owl:NamedIndividual ,
+                     :city .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#minced_meat
+:minced_meat rdf:type owl:NamedIndividual ,
+                      :meat .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#pieces_meat
+:pieces_meat rdf:type owl:NamedIndividual ,
+                      :meat .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#qom
+:qom rdf:type owl:NamedIndividual ,
+              :city .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#shiraz
+:shiraz rdf:type owl:NamedIndividual ,
+                 :city .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#tabriz
+:tabriz rdf:type owl:NamedIndividual ,
+                 :city .
+
+
+###  http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-16#tehran
+:tehran rdf:type owl:NamedIndividual ,
+                 :city .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#adolescents>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#infants>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#preschoolers>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#school_age_children>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#carbohydrate>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#lipid>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#protein>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#water>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#dairy_product>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#egg>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#fish>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#meat>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#energy_sources>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#promote_growth_and_developement>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#regulate_body_function>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#fruits>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#grains>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#legumes>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#mushrooms>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#nuts>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#tubers>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vegetables>
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_A>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_B>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_C>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_D>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_E>
+                <http://www.semanticweb.org/maryam/ontologies/2022/0/untitled-ontology-14#vitamin_k>
+              )
+] .
+
+
+###  Generated by the OWL API (version 4.5.25.2023-02-15T19:15:49Z) https://github.com/owlcs/owlapi
